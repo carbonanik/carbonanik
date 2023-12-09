@@ -26,7 +26,9 @@
 
 <br />
 
-hi, i'm [Sheikh Anik](https://carbonanik.me/), a passionate self-taught flutter app developer. my passion for app development lies with dreaming up ideas and making them come true with elegant interfaces. i take great care in the experience, architecture, and code quality of the things i build.
+I'm Sheikh Anik, a pumped-up self-taught Flutter app ninja. I'm all about diving into the app development world, turning wild ideas into reality with sleek interfaces. I'm the kind of person who sweats the small stuff – from user experience to the nitty-gritty of code quality and architecture. It's not just about building apps for me; it's about crafting experiences that make people go, "Wow, that's cool!" 🚀
+
+<!-- hi, i'm [Sheikh Anik](https://carbonanik.me/), a passionate self-taught flutter app developer. my passion for app development lies with dreaming up ideas and making them come true with elegant interfaces. i take great care in the experience, architecture, and code quality of the things i build. -->
 
 i am also an open-source enthusiast and maintainer. i learned a lot from the open-source community and i love how collaboration and knowledge sharing happened through open-source.
   
