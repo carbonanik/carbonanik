@@ -18,10 +18,6 @@
 [![Twitter](https://img.shields.io/badge/%20-Follow-black?color=14171A&labelColor=1976d2&logo=twitter&logoColor=ffffff)](https://twitter.com/CarbonAnik)
 [![Questions](https://img.shields.io/badge/%20-Questions-black?color=14171A&labelColor=fff&logo=stackoverflow&logoColor=0c0d0e26)](https://stackoverflow.com/users/15593945/carbon-anik)
 [![Questions](https://img.shields.io/badge/%20-Subscribe-black?color=14171A&labelColor=f00&logo=youtube&logoColor=0c0d0e26)](https://www.youtube.com/channel/UCmOYT2XPsybmJcb4286NC2g)
-
-
-
-
 ![](https://visitor-badge.glitch.me/badge?page_id=carbonanik)
 
 <br />
