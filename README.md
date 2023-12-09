@@ -26,7 +26,7 @@
 
 <br />
 
-hi, i'm [Sheikh Anik](https://carbonanik.me/), a passionate self-taught full stack android developer from bangladesh. my passion for app development lies with dreaming up ideas and making them come true with elegant interfaces. i take great care in the experience, architecture, and code quality of the things i build.
+hi, i'm [Sheikh Anik](https://carbonanik.me/), a passionate self-taught flutter app developer. my passion for app development lies with dreaming up ideas and making them come true with elegant interfaces. i take great care in the experience, architecture, and code quality of the things i build.
 
 i am also an open-source enthusiast and maintainer. i learned a lot from the open-source community and i love how collaboration and knowledge sharing happened through open-source.
   
