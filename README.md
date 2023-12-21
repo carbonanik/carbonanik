@@ -1,5 +1,5 @@
 
-![LinkedIn](banner.png)
+![LinkedIn](banner-gh.png)
 
 ---
 
