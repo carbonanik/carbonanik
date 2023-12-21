@@ -18,7 +18,7 @@
 <a href="https://www.linkedin.com/in/carbonanik/">
   <img align="left" alt="Anik's LinkedIN" width="22px" src="https://raw.githubusercontent.com/peterthehan/peterthehan/master/assets/linkedin.svg" />
 </a> -->
-[![LinkedIn](https://img.shields.io/badge/%20-Visit-my-portfolio?color=14171A&labelColor=212121&logo=linkedin&logoColor=ffffff)](https://carbonanik.web.app/) 
+[![LinkedIn](https://img.shields.io/badge/%F0%9F%8C%8E-Visit_my_site-blue)](https://carbonanik.web.app/) 
 [![LinkedIn](https://img.shields.io/badge/%20-Connect-black?color=14171A&labelColor=212121&logo=linkedin&logoColor=ffffff)](https://www.linkedin.com/in/carbonanik/) 
 [![Facebook](https://img.shields.io/badge/%20-Follow-black?color=14171A&labelColor=1976d2&logo=facebook&logoColor=ffffff)](https://www.facebook.com/makhdum.sh/)
 [![Twitter](https://img.shields.io/badge/%20-Follow-black?color=14171A&labelColor=1976d2&logo=twitter&logoColor=ffffff)](https://twitter.com/CarbonAnik)
