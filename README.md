@@ -1,5 +1,5 @@
 
-<img align="left" alt="Header" src="banner.png" />
+![LinkedIn](banner.png)
 
 ---
 
