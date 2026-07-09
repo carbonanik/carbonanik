@@ -1,4 +1,4 @@
-# Hi there 👋 I'm Sheikh Mahfuz Islam Anik
+# Hi there 👋 I'm Anik
 
 ### Flutter Developer | Backend Developer | Building SaaS Products
 
