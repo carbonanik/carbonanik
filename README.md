@@ -12,7 +12,7 @@ Currently I'm building SaaS products, experimenting with AI, and exploring ways 
 
 ## 🚀 About Me
 
-- 📱 5+ years of Flutter development
+- 📱 3+ years of Flutter development
 - 💙 Love building beautiful and performant apps
 - 🐍 Backend development with Python (FastAPI & Flask)
 - 🗄️ PostgreSQL, SQLite & Firebase
