@@ -1,6 +1,6 @@
 """Render GitHub profile artwork: python3 tools/render_profile.py (requires Pillow)."""
 from html import escape
-from colorsys import hls_to_rgb, rgb_to_hls
+from colorsys import rgb_to_hls
 from pathlib import Path
 from PIL import Image, ImageOps
 
@@ -8,6 +8,11 @@ ROOT = Path(__file__).resolve().parents[1]
 THEMES = {
     'dark': dict(bg='#0d1117', panel='#161b22', border='#30363d', text='#e6edf3', muted='#8b949e', accent='#79c0ff', value='#a5d6ff', green='#7ee787'),
     'light': dict(bg='#ffffff', panel='#f6f8fa', border='#d0d7de', text='#24292f', muted='#57606a', accent='#0969da', value='#0550ae', green='#1a7f37'),
+}
+PORTRAIT_PALETTES = {
+    # Three warm skin/shadow tones and two greens from the portrait's rim light.
+    'dark': ('#8c6b53', '#c3936b', '#e5bc94', '#75834c', '#bdd46b'),
+    'light': ('#594637', '#a06d48', '#b47c52', '#56642f', '#768c35'),
 }
 
 def text(x, y, value, color, size=14, extra=''):
@@ -38,11 +43,12 @@ def portrait_rows():
     return [[(glyph(gray.getpixel((x, y))), colors.getpixel((x, y))) for x in range(80)] for y in range(50)]
 
 def portrait_color(rgb, theme):
-    # Preserve the photograph's hue; adjust only lightness for the card background.
+    # Map the photograph to exactly five flat colors without gradients or dithering.
     hue, lightness, saturation = rgb_to_hls(*(channel / 255 for channel in rgb))
-    low, high = (.32, .82) if theme == 'dark' else (.20, .44)
-    lightness = max(low, min(high, lightness))
-    return '#' + ''.join(f'{round(channel * 255):02x}' for channel in hls_to_rgb(hue, lightness, saturation))
+    palette = PORTRAIT_PALETTES[theme]
+    if .17 <= hue <= .46 and saturation > .12:
+        return palette[3 if lightness < .35 else 4]
+    return palette[0 if lightness < .28 else 1 if lightness < .50 else 2]
 
 def profile(theme, rows):
     c = THEMES[theme]
