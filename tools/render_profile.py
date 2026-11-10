@@ -14,6 +14,8 @@ PORTRAIT_PALETTES = {
     'dark': ('#8c6b53', '#c3936b', '#e5bc94', '#75834c', '#bdd46b'),
     'light': ('#594637', '#a06d48', '#b47c52', '#56642f', '#768c35'),
 }
+# Sclera cells on the 80-column portrait grid; leave the neighboring pupils dark.
+EYE_WHITES = {(26, 16), (38, 16)}
 
 def text(x, y, value, color, size=14, extra=''):
     return f'<text x="{x}" y="{y}" fill="{color}" font-size="{size}" {extra}>{escape(value)}</text>'
@@ -42,8 +44,10 @@ def portrait_rows():
         return ramp[round(brightness ** 0.6 * (len(ramp) - 1))]
     return [[(glyph(gray.getpixel((x, y))), colors.getpixel((x, y))) for x in range(80)] for y in range(50)]
 
-def portrait_color(rgb, theme):
-    # Map the photograph to exactly five flat colors without gradients or dithering.
+def portrait_color(rgb, theme, column=None, row=None):
+    if (column, row) in EYE_WHITES:
+        return '#ffffff'
+    # Use five flat portrait colors plus white for the eyes.
     hue, lightness, saturation = rgb_to_hls(*(channel / 255 for channel in rgb))
     palette = PORTRAIT_PALETTES[theme]
     if .17 <= hue <= .46 and saturation > .12:
@@ -62,7 +66,9 @@ def profile(theme, rows):
     for i, row in enumerate(rows):
         # Position each colored glyph on the original monospace grid.
         glyphs = ''.join(
-            f'<tspan x="{28 + column * 4.997:.3f}" fill="{portrait_color(rgb, theme)}">{escape(char)}</tspan>'
+            f'<tspan x="{28 + column * 4.997:.3f}" fill="{portrait_color(rgb, theme, column, i)}"'
+            + (' stroke="#594637" stroke-width="0.25" paint-order="stroke"' if (column, i) in EYE_WHITES else '')
+            + f'>{escape(char)}</tspan>'
             for column, (char, rgb) in enumerate(row) if char != ' '
         )
         elements.append(f'<text y="{77 + i * 8.5}" font-size="8.3">{glyphs}</text>')
