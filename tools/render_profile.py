@@ -5,8 +5,12 @@ from PIL import Image, ImageOps
 
 ROOT = Path(__file__).resolve().parents[1]
 THEMES = {
-    'dark': dict(bg='#0d1117', panel='#161b22', border='#30363d', text='#e6edf3', muted='#8b949e', accent='#79c0ff', value='#a5d6ff', portrait='#c9d1d9', green='#7ee787'),
-    'light': dict(bg='#ffffff', panel='#f6f8fa', border='#d0d7de', text='#24292f', muted='#57606a', accent='#0969da', value='#0550ae', portrait='#394654', green='#1a7f37'),
+    'dark': dict(bg='#0d1117', panel='#161b22', border='#30363d', text='#e6edf3', muted='#8b949e', accent='#79c0ff', value='#a5d6ff', green='#7ee787'),
+    'light': dict(bg='#ffffff', panel='#f6f8fa', border='#d0d7de', text='#24292f', muted='#57606a', accent='#0969da', value='#0550ae', green='#1a7f37'),
+}
+PORTRAIT_COLORS = {
+    'dark': ['#5eead4', '#38bdf8', '#a78bfa', '#f472b6', '#fb923c'],
+    'light': ['#0f766e', '#0369a1', '#7c3aed', '#be185d', '#c2410c'],
 }
 
 def text(x, y, value, color, size=14, extra=''):
@@ -37,7 +41,14 @@ def portrait_rows():
 
 def profile(theme, rows):
     c = THEMES[theme]
+    # Use one shared coordinate system so every ASCII row follows the same gradient.
+    stops = ''.join(
+        f'<stop offset="{i * 25}%" stop-color="{color}"/>'
+        for i, color in enumerate(PORTRAIT_COLORS[theme])
+    )
     elements = [
+        '<defs><linearGradient id="portrait-colors" gradientUnits="userSpaceOnUse" '
+        f'x1="100" y1="110" x2="350" y2="470">{stops}</linearGradient></defs>',
         f'<rect x="0.5" y="0.5" width="1079" height="579" rx="14" fill="{c["bg"]}" stroke="{c["border"]}"/>',
         f'<path d="M1 48H1079" stroke="{c["border"]}"/>',
     ]
@@ -45,7 +56,7 @@ def profile(theme, rows):
         elements.append(f'<circle cx="{x}" cy="25" r="5" fill="{color}"/>')
     elements += [text(92, 30, 'carbonanik / README.md', c['muted'], 12), text(1038, 30, '~/', c['accent'], 12)]
     for i, row in enumerate(rows):
-        elements.append(text(28, 77 + i * 8.5, row, c['portrait'], 8.3, 'xml:space="preserve"'))
+        elements.append(text(28, 77 + i * 8.5, row, 'url(#portrait-colors)', 8.3, 'xml:space="preserve"'))
     elements += [
         text(225, 533, 'ANIK', c['text'], 17, 'text-anchor="middle" font-weight="bold" letter-spacing="5"'),
         text(225, 554, 'build software that solves real problems', c['muted'], 10, 'text-anchor="middle"'),
