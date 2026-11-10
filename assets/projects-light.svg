@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="532" height="90" viewBox="0 0 532 90" role="img" aria-labelledby="title desc">
+<title id="title">Explore my projects</title>
+<desc id="desc">github.com/carbonanik</desc>
+<g font-family="DejaVu Sans Mono, Consolas, monospace">
+<rect x="0.5" y="0.5" width="531" height="89" rx="10" fill="#f6f8fa" stroke="#d0d7de"/>
+<text x="23" y="34" fill="#1a7f37" font-size="17" >$</text>
+<text x="45" y="34" fill="#24292f" font-size="15" >ls projects</text>
+<text x="23" y="63" fill="#57606a" font-size="12" >github.com/carbonanik</text>
+<text x="493" y="49" fill="#0969da" font-size="24" >↗</text>
+</g>
+</svg>
